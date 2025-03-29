@@ -7,14 +7,10 @@
 #ifndef TRACING_H
 #define TRACING_H
 
-#include <algorithm>
 #include <cstdint>
-#include <cstdio>
 #include <format>
-#include <fstream>
 #include <functional>
 #include <iostream>
-#include <optional>
 #include <source_location>
 #include <sstream>
 #include <string>
