@@ -155,7 +155,7 @@ template <typename... Args> struct trace {
 
     std::string message =
         std::format(fmt, std::forward<decltype(args)>(args)...);
-    Record record{Level::Debug, std::move(message), loc};
+    Record record{Level::Trace, std::move(message), loc};
     Builder::g_builder.formatter(std::cout, record);
   }
 };
@@ -189,7 +189,7 @@ template <typename... Args> struct info {
 
     std::string message =
         std::format(fmt, std::forward<decltype(args)>(args)...);
-    Record record{Level::Debug, std::move(message), loc};
+    Record record{Level::Info, std::move(message), loc};
     Builder::g_builder.formatter(std::cout, record);
   }
 };
@@ -206,7 +206,7 @@ template <typename... Args> struct warning {
 
     std::string message =
         std::format(fmt, std::forward<decltype(args)>(args)...);
-    Record record{Level::Debug, std::move(message), loc};
+    Record record{Level::Warning, std::move(message), loc};
     Builder::g_builder.formatter(std::cout, record);
   }
 };
@@ -223,7 +223,7 @@ template <typename... Args> struct error {
 
     std::string message =
         std::format(fmt, std::forward<decltype(args)>(args)...);
-    Record record{Level::Debug, std::move(message), loc};
+    Record record{Level::Error, std::move(message), loc};
     Builder::g_builder.formatter(std::cout, record);
   }
 };
